@@ -45,12 +45,44 @@ int get_last(int n)
 	return rez;
 }
 
+int is_num_valid(int num, int size)
+{	
+	int nums[size];
+	int i,j;
+	for(i = 0; i < size;i++)
+	{
+		int val = num%10;
+		nums[i] = val;;
+		num /= 10;
+	}
+	for(i = 0;i<size;i++)
+	{
+		for(j = i+1;j < size - 1;j++)
+		{
+			if(nums[i] == nums[j])
+			{
+				return 0;
+			}
+		}
+	}
+	return 1;
+}
+
+void vc_print_combn(int n)
+{
+	int start = get_first(n);
+	int end = get_last(n);
+	int i;
+	for(i = start; i <= end; i++)
+	{
+		if(!is_num_valid(i,n)) continue;
+		print(i);
+		putchar(',');
+		putchar(' ');
+	}
+}
+
 int main()
 {
-    int a = get_first(6);
-	print(a);
-	putchar('\n');
-	int b = get_last(6);
-	print(b);
-	return 0;
+    vc_print_combn(3);
 }
