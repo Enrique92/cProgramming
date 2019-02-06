@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+void static print(int n)
+{
+	putchar('0' + n);
+}
+
 void vc_print_alphabet()
 {
 	char index;
@@ -56,8 +61,25 @@ void vc_print_combo()
 				if(first == second) continue;
 				if(second == third) continue;
 				if(first == third) continue;
-				printf("%d%d%d, ",first,second,third);
+				print(first);
+				putchar(',');
+				putchar(' ');
+				print(second);
+				print(third);
 			}
+		}
+	}
+}
+
+void vc_print_combo2()
+{
+	int first,second;
+	for(first = 0; first < 99; first++)
+	{
+		for(second = 0; second < 100; second++)
+		{
+			if(first == second) continue;
+			printf("%02d %02d, ",first,second);
 		}
 	}
 }
@@ -70,5 +92,8 @@ int main()
 	vc_is_negative(-2);
 	vc_is_negative(2);	
 	vc_print_combo();
+	vc_print_combo2();
+	print(5);
+	putchar('\n');
 	return 0;
 }
