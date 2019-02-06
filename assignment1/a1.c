@@ -103,26 +103,64 @@ void vc_print_combo2()
 			print_formated(second);	
 			putchar(',');
 			putchar(' ');
-
 		}
 	}
 }
 
+void vc_putnbr(int nb)
+{
+	print(nb);
+}
+
+int get_first(int n)
+{
+	int rez = 0;
+	int i;
+	for(i = 1;i < n;i++)
+	{
+		rez *= 10;
+		rez +=i;
+	}
+	return rez;
+}
+
+int get_last(int n)
+{
+	int s = 9 - n + 1;
+	int i = s;
+	int rez = 0;
+	for(i = s;i <= 9;i++)
+	{
+		rez *= 10;
+		rez +=i;
+	}
+	return rez;
+}
+
 int main()
 {
-	vc_print_alphabet();
+	int a = get_first(6);
+	print(a);
 	putchar('\n');
-	vc_print_reverse_alphabet();
-	putchar('\n');
-	vc_print_numbers();
-	putchar('\n');
-	vc_is_negative(-2);
-	putchar('\n');
-	vc_is_negative(2);	
-	putchar('\n');
-	vc_print_combo();
-	putchar('\n');
-	vc_print_combo2();
-	putchar('\n');
+	int b = get_last(6);
+	print(b);
+	//vc_print_alphabet();
+	//putchar('\n');
+	//vc_print_reverse_alphabet();
+	//putchar('\n');
+//	vc_print_numbers();
+//	putchar('\n');
+//	vc_is_negative(-2);
+//	putchar('\n');
+//	vc_is_negative(2);	
+//	putchar('\n');
+//	vc_print_combo();
+	//putchar('\n');
+	//vc_print_combo2();
+	//putchar('\n');
+	//print(123456);
+	//putchar('\n');
+	//print(1200340056);
+	//putchar('\n');
 	return 0;
 }
