@@ -8,12 +8,14 @@
 
 void vc_pt(int *n)
 {
-    77 = *n;
+    *n = 77;
 }
 
 int main()
 {
-    int n = 10;
-    vc_pt(&n);
-    return 0;
+   int a = 0;
+   printf("%d\n", a);
+   vc_pt(&a);
+   printf("%d", a);
+   return 0;
 }
