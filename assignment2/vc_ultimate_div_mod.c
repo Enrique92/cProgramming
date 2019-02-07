@@ -6,7 +6,7 @@
 
 #include <stdio.h>
 
-void vc_div_mod(int *a, int *b)
+void vc_ultimate_div_mod(int *a, int *b)
 {
     int div, mod;
     div = *a / *b;
@@ -18,7 +18,7 @@ void vc_div_mod(int *a, int *b)
 int main()
 {
     int a = 5, b = 2;
-    vc_div_mod(&a, &b);
+    vc_ultimate_div_mod(&a, &b);
     printf("%d, %d", a, b);
     return 0;
 }
